@@ -1,9 +1,9 @@
 #!/bin/bash
 
-filepath=".\genlist.txt"
+filepath="genlist.txt"
 
 #add starting format of the string
-data="^("
+data="\"^("
 
 #Loop each line in file and concat the data into variable
 while read line; do
@@ -17,7 +17,7 @@ done < $filepath
 data=${data%?} #remove last character
 
 #complete the format with ')'
-data+=")"
+data+=")\""
 
 #write the command line 
 echo "$data"
